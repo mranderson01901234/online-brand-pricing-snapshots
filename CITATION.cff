@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: Online Brand Pricing Snapshots
+message: "If you use this dataset, please cite it as below."
+type: dataset
+authors:
+  - name: Project Blueprint
+repository-code: https://github.com/mranderson01901234/online-brand-pricing-snapshots
+url: https://getblueprint.io/datasets
+abstract: >-
+  Weekly snapshots of publicly available pricing data from online brands,
+  capturing product pricing and discount behavior for market research and
+  pricing analysis.
+keywords:
+  - pricing data
+  - e-commerce
+  - market research
+  - discount analysis
+license: MIT
+version: 0.1.0
+date-released: 2025-12-18
+preferred-citation:
+  type: dataset
+  title: Online Brand Pricing Snapshots
+  authors:
+    - name: Project Blueprint
+  year: 2025
+  url: https://github.com/mranderson01901234/online-brand-pricing-snapshots
+references:
+  - type: website
+    title: Dataset Downloads
+    url: https://getblueprint.io/datasets
+  - type: website
+    title: Methodology Documentation
+    url: https://getblueprint.io/methodology
+
