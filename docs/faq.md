@@ -1,47 +1,58 @@
-# Frequently Asked Questions
+# FAQ
 
-## How often does this update?
+---
 
-Weekly. Every snapshot covers a consistent collection window, same time each week. This isn't a real-time feed—it's a structured historical record.
+**How often does this update?**
 
-## What does the dataset cover?
+Weekly. Same collection window each week. This is a structured historical record, not a real-time feed.
 
-Publicly visible pricing from online brand storefronts. Current prices, original prices, discount indicators, and category context. The specific brands in scope are documented in each snapshot release.
+**What does the dataset cover?**
 
-## Is this data complete?
+Publicly visible pricing from online brand storefronts: current prices, original prices, discount indicators, and category context. Brands in scope are documented in each release.
 
-No, and it's not trying to be.
+**Is this data complete?**
 
-This dataset captures pricing *behavior*, not full product catalogs. If a brand sells 10,000 SKUs and we capture 2,000 of them, that's fine—as long as the sample is consistent week over week.
+No.
 
-Completeness is not the goal. Comparability is.
+This captures pricing behavior, not full product catalogs. A consistent sample that's comparable week over week is more useful than exhaustive coverage that varies. Completeness is not the goal. Comparability is.
 
-## Can I use this commercially?
+**Can I use this commercially?**
 
-Yes. The dataset is released under the MIT license.
+Yes. MIT license.
 
-That said, you're responsible for ensuring your use complies with applicable laws and any terms of service from the original sources. We're publishing aggregated snapshots of publicly visible data, but downstream use is on you.
+You're responsible for ensuring your use complies with applicable laws and any terms of service from original sources. We publish aggregated snapshots of publicly visible data. Downstream use is on you.
 
-## What's excluded?
+**What's excluded?**
 
 - Member or loyalty pricing
 - Prices behind logins
 - Cart-only discounts
 - Regional price variations (unless explicitly collected)
-- Flash sales that happen outside the collection window
+- Flash sales outside the collection window
 
-If it's not visible to a standard visitor at the time of collection, it's not in the snapshot.
+If it's not visible to a standard visitor at collection time, it's not in the snapshot.
 
-## Why weekly instead of daily?
+**Why weekly?**
 
-Daily snapshots would capture more noise than signal. Prices don't change meaningfully every day for most products. Weekly cadence is frequent enough to catch trends and promotions, but not so frequent that you're drowning in redundant data.
+Daily captures noise. Prices don't change meaningfully every day for most products. Weekly is frequent enough to catch trends and promotions without drowning in redundant data.
 
-## Can I request a specific brand?
+**Can I request a brand?**
 
-Coverage decisions are made based on data quality, relevance, and feasibility. We don't take requests, but the scope is documented transparently.
+No. Coverage is based on data quality, relevance, and feasibility. Scope is documented transparently.
 
-## How should I cite this dataset?
+**How do I cite this?**
 
-Use the citation block in the README, or reference the [CITATION.cff](../CITATION.cff) file for machine-readable formats.
+```
+Online Brand Pricing Snapshots. Project Blueprint.
+https://github.com/mranderson01901234/online-brand-pricing-snapshots
+```
 
-If you're publishing research, a citation helps others find the source. If you're building a product, attribution is appreciated but not required.
+See [CITATION.cff](../CITATION.cff) for machine-readable format.
+
+**What if I find an error?**
+
+Open an issue. Include the snapshot date, brand, and specific problem. We'll investigate.
+
+**Will historical snapshots change?**
+
+No. Published snapshots are immutable. If we find a collection error, it's documented in release notes but the original snapshot is not modified.
