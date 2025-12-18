@@ -2,33 +2,46 @@
 
 ## How often does this update?
 
-Snapshots are collected weekly. Publication schedule may vary based on processing and verification timelines.
+Weekly. Every snapshot covers a consistent collection window, same time each week. This isn't a real-time feed—it's a structured historical record.
 
 ## What does the dataset cover?
 
-The dataset covers publicly visible pricing from online brand storefronts. Coverage includes product prices, discount indicators, and related metadata. The specific brands and categories included are documented in snapshot release notes.
+Publicly visible pricing from online brand storefronts. Current prices, original prices, discount indicators, and category context. The specific brands in scope are documented in each snapshot release.
 
 ## Is this data complete?
 
-No. The dataset represents a sample of publicly accessible pricing data. It does not claim to be exhaustive. Coverage is limited to brands included in the collection scope, and not all products from each brand may be captured.
+No, and it's not trying to be.
 
-## Can this be used commercially?
+This dataset captures pricing *behavior*, not full product catalogs. If a brand sells 10,000 SKUs and we capture 2,000 of them, that's fine—as long as the sample is consistent week over week.
 
-The data is released under the MIT license. You may use it for commercial purposes, but you should review the license terms and ensure your use case complies with applicable laws and terms of service of original data sources.
+Completeness is not the goal. Comparability is.
 
-This dataset is provided as-is without warranty. Users are responsible for validating fitness for their specific use case.
+## Can I use this commercially?
+
+Yes. The dataset is released under the MIT license.
+
+That said, you're responsible for ensuring your use complies with applicable laws and any terms of service from the original sources. We're publishing aggregated snapshots of publicly visible data, but downstream use is on you.
 
 ## What's excluded?
 
-The following are generally excluded:
+- Member or loyalty pricing
+- Prices behind logins
+- Cart-only discounts
+- Regional price variations (unless explicitly collected)
+- Flash sales that happen outside the collection window
 
-- Member-only or account-specific pricing
-- Prices that require login to view
-- Regional pricing variations (unless specifically collected)
-- Time-limited promotions that occur outside collection windows
-- Prices requiring user interaction beyond standard page load
+If it's not visible to a standard visitor at the time of collection, it's not in the snapshot.
+
+## Why weekly instead of daily?
+
+Daily snapshots would capture more noise than signal. Prices don't change meaningfully every day for most products. Weekly cadence is frequent enough to catch trends and promotions, but not so frequent that you're drowning in redundant data.
+
+## Can I request a specific brand?
+
+Coverage decisions are made based on data quality, relevance, and feasibility. We don't take requests, but the scope is documented transparently.
 
 ## How should I cite this dataset?
 
-See the [CITATION.cff](../CITATION.cff) file for machine-readable citation information, or use the citation block provided in the README.
+Use the citation block in the README, or reference the [CITATION.cff](../CITATION.cff) file for machine-readable formats.
 
+If you're publishing research, a citation helps others find the source. If you're building a product, attribution is appreciated but not required.

@@ -1,25 +1,43 @@
 # Overview
 
-## What this dataset represents
+## Why this dataset exists
 
-Online Brand Pricing Snapshots is a collection of point-in-time pricing data captured from publicly accessible online storefronts. Each snapshot records product prices, discount indicators, and related metadata as observed at the time of collection.
+Online pricing is one of the most dynamic and least documented aspects of modern retail. Prices change constantly, discounts come and go, and the historical record is effectively nonexistent unless someone captures it.
 
-The dataset focuses on observable pricing behavior rather than internal pricing strategies or non-public promotional mechanisms.
+This dataset exists to fill that gap.
 
-## Who typically uses this data
+By publishing weekly snapshots of online brand pricing behavior, we create a structured, comparable record that supports real analysis—not just observation.
 
-- **Market researchers** analyzing pricing trends across online retail
-- **Pricing analysts** benchmarking against competitor behavior
-- **Academics** studying e-commerce pricing dynamics
-- **Data journalists** investigating retail pricing patterns
+## Who this is for
 
-## Why snapshots exist
+**Pricing analysts** who need to benchmark behavior across brands without building their own collection infrastructure.
 
-Pricing in online retail is dynamic. Products may be discounted, repriced, or removed from listings frequently. Point-in-time snapshots preserve this information for historical analysis.
+**Market researchers** studying how online retail responds to seasons, competition, and economic shifts.
 
-Without snapshots, pricing changes are lost. This dataset provides a record of pricing states that can be compared over time.
+**Academics** investigating e-commerce pricing dynamics, discount strategies, or consumer-facing price presentation.
+
+**Builders** creating tools, dashboards, or models that depend on consistent pricing signals.
+
+## What questions this dataset answers well
+
+- How do discount rates vary across brands and categories?
+- How has a brand's pricing behavior changed over time?
+- When do brands run promotions, and how deep are the discounts?
+- What's the typical spread between original and sale prices?
+- How consistent is pricing behavior week over week?
+
+## What this dataset is not good for
+
+This is not a product catalog. It does not track inventory, availability, or product attributes beyond what's needed for pricing context.
+
+It does not capture real-time pricing. If you need sub-daily granularity, this isn't the right source.
+
+It does not include private or authenticated pricing. Member pricing, loyalty discounts, and regional variations are outside scope unless explicitly documented.
+
+If you need exhaustive coverage of every SKU a brand sells, this dataset will disappoint you. It captures behavior, not completeness.
 
 ## Coverage
 
-Coverage details will be documented alongside published snapshots. The scope of brands and product categories may change as the project evolves.
+The scope of brands and categories is documented in snapshot release notes. Coverage evolves as the project matures—brands may be added or removed based on data quality and relevance.
 
+Historical snapshots are never modified. What's published stays published.

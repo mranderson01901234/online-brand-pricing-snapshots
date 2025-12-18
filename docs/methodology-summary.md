@@ -1,39 +1,62 @@
 # Methodology Summary
 
-This document provides a high-level overview of how pricing snapshots are collected and processed. This is a summary, not a complete methodology specification.
+This is a high-level summary of how pricing snapshots are collected and processed. For full methodology details, see the [complete documentation](https://getblueprint.io/methodology).
 
-## Collection
+## What a snapshot represents
 
-Pricing data is collected from publicly accessible product pages on online storefronts. Collection occurs at regular weekly intervals to maintain consistency across snapshots.
+A snapshot is a point-in-time capture of pricing behavior from online storefronts. Each snapshot includes:
 
-Data is retrieved as it would appear to a standard visitor without account-specific pricing or regional overrides where possible.
+- **Current listed prices** — What a visitor would see on the product page
+- **Original/comparison prices** — The reference price shown alongside discounted items
+- **Discount indicators** — Whether the item is marked as on sale, clearance, or promotion
+- **Category context** — Product categorization as presented by the brand
 
-## Verification
+A snapshot does not represent a complete product catalog. It represents observable pricing signals at the moment of collection.
 
-Collected data undergoes verification to ensure accuracy:
+## How pricing is normalized
 
-- Price values are validated against expected formats
-- Currency and unit consistency is checked
-- Obvious collection errors are flagged and excluded
+Raw pricing data varies significantly across brands. Normalization ensures comparability:
 
-## Normalization
+- Prices are recorded in their original currency with explicit currency codes
+- Percentage discounts are calculated consistently from original and current prices
+- Price formats are standardized (decimals, thousands separators, currency symbols stripped)
+- Missing original prices on non-discounted items are handled explicitly, not inferred
 
-Raw data is normalized to a consistent schema:
+## How discounts are interpreted
 
-- Prices are recorded in their original currency
-- Discount indicators are standardized
-- Product identifiers are mapped where possible
+A product is marked as discounted if the source page presents it that way—sale badge, strikethrough price, or explicit discount callout.
 
-## Limitations
+We do not infer discounts from price changes over time. If a price drops but the brand doesn't mark it as a sale, it's recorded as a regular price.
 
-This methodology captures publicly visible pricing only. It does not account for:
+This means the dataset reflects *presented* discount behavior, not *detected* price changes.
 
-- Member-only or loyalty pricing
-- Regional price variations (unless explicitly collected)
-- Flash sales or time-limited promotions that fall outside collection windows
-- Prices that require interaction beyond page load
+## What verification means
 
-## Full methodology
+Before inclusion in a snapshot, data passes through:
 
-A complete methodology document may be published separately. This summary is intended to provide sufficient context for understanding the dataset's scope and constraints.
+- **Format validation** — Prices must be parseable and within reasonable bounds
+- **Consistency checks** — Currency, discount math, and category mappings are verified
+- **Anomaly flagging** — Outliers (e.g., $0.01 prices, 99% discounts) are reviewed manually
+- **Source confirmation** — Spot checks against live pages during collection window
 
+Verification is about catching collection errors, not guaranteeing business accuracy.
+
+## What's excluded
+
+Certain pricing signals are intentionally excluded:
+
+- **Authenticated prices** — Anything requiring login or account creation
+- **Cart-dependent pricing** — Discounts that only appear after adding to cart
+- **Regional variations** — Unless a region is explicitly targeted for collection
+- **Bundle or conditional pricing** — "Buy 2 get 1 free" style promotions
+- **Rapidly changing prices** — If a price changes during collection, the first observed value is used
+
+## Cadence
+
+Snapshots are collected weekly. The specific collection window is consistent week over week to minimize day-of-week effects.
+
+Weekly cadence balances signal quality against data volume. More frequent collection would capture noise; less frequent collection would miss meaningful patterns.
+
+---
+
+For the complete methodology, including technical details on collection infrastructure, see: https://getblueprint.io/methodology
